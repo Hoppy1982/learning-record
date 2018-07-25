@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --output-style expanded -o client/built/css client/src/views",
-    "scss:watch": "npm run scss && node-sass client/src/views -wo client/built/css",
+    "scss": "node-sass --output-style expanded -o client/build/css client/src/pages",
+    "scss:watch": "npm run scss && node-sass client/src/pages -wo client/build/css",
     "ejs": "node scripts/build-ejs.js"
   },
   "author": "",

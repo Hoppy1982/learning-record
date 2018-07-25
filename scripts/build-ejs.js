@@ -2,8 +2,8 @@ const path = require('path')
 const fs = require('fs')
 const ejs = require('ejs')
 
-const ejsDir = path.join(__dirname, '/../client/src/views')
-const htmlDir = path.join(__dirname, '/../client/built/html')
+const ejsDir = path.join(__dirname, '/../client/src/pages')
+const htmlDir = path.join(__dirname, '/../client/build/html')
 
 fs.readdir(ejsDir, (err, filenames) => {
   if (err) {

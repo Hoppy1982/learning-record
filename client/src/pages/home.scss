@@ -1,4 +1,4 @@
-@import '../static/_defaults';
+@import '../partials/_defaults';
 
 /*home.scss*/
 html, body {
@@ -27,4 +27,4 @@ body {
   width: 100%;
 }
 
-@import '../components/_header';
+@import '../partials/_header';
