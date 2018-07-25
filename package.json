@@ -1,0 +1,21 @@
+{
+  "name": "static-site-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --output-style expanded -o client/built/css client/src/views",
+    "scss:watch": "npm run scss && node-sass client/src/views -wo client/built/css",
+    "ejs": "node scripts/build-ejs.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "node-sass": "^4.9.0"
+  }
+}

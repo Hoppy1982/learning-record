@@ -1,0 +1,11 @@
+/*_header.scss*/
+$header-primary-color: dimgrey;
+
+.header {
+  background: $site-primary-color;
+}
+
+.header__heading {
+  text-align: center;
+  color: $header-primary-color;
+}

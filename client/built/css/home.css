@@ -1,0 +1,35 @@
+/*_defaults.scss*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+/*home.scss*/
+html, body {
+  height: 100%; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; }
+
+.page-layout-header {
+  flex: 0 0 auto;
+  width: 100%; }
+
+.page-layout-main {
+  flex: 1 1 auto;
+  width: 100%; }
+
+.page-layout-footer {
+  flex: 0 0 auto;
+  width: 100%; }
+
+/*_header.scss*/
+.header {
+  background: lightgreen; }
+
+.header__heading {
+  text-align: center;
+  color: dimgrey; }
