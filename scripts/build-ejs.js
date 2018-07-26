@@ -30,9 +30,10 @@ function filterEjsFiles(filenames) {
 
 
 function generateHTML(ejsFilename) {
-  let htmlFileName = ejsFilename.split('.').shift() + '.html'
+  let filename = ejsFilename.split('.').shift()
+  let htmlFileName =  filename + '.html'
 
-  ejs.renderFile(path.join(ejsDir, ejsFilename), {}, (err, html) => {
+  ejs.renderFile(path.join(ejsDir, ejsFilename), {pageName: filename}, (err, html) => {
     if (err) {
       throw new Error(`Error creating html from ${ejsFilename}`)
     }
