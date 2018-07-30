@@ -12,7 +12,7 @@
     "favicon": "node scripts/copy-favicon.js",
     "build": "npm run scss && npm run ejs && npm run favicon",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d /"
+    "deploy": "gh-pages -d /client/build /"
   },
   "author": "",
   "license": "ISC",
