@@ -11,7 +11,7 @@
     "ejs": "node scripts/build-ejs.js",
     "favicon": "node scripts/copy-favicon.js",
     "build": "npm run scss && npm run ejs && npm run favicon",
-    "predeploy": "npm run build",
+    "xpredeploy": "npm run build",
     "deploy": "node scripts/deploy.js"
   },
   "author": "",
