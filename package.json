@@ -8,7 +8,7 @@
     "scss": "node-sass --output-style expanded -o client/build client/src/pages",
     "scss:watch": "npm run scss && node-sass client/src/pages -wo client/build",
     "ejs": "node scripts/build-ejs.js",
-    "favicon": "node scripts/copy-files.js",
+    "favicon": "node scripts/copy-favicon.js",
     "build": "npm run scss && npm run ejs && npm run favicon"
   },
   "author": "",
