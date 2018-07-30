@@ -1,8 +1,16 @@
 /*_defaults.scss*/
-$site-primary-color: lightgreen;
+$site-primary-color: #3a3c56;
+$site-secondary-color: #fff;
+$site-tertiary-color: #282A3D;
+$site-text-side-margin: 20px;
 
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+html {
+  font-family: "system-ui";
+  font-size: 16px;
 }

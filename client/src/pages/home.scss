@@ -1,4 +1,7 @@
 @import '../partials/_defaults';
+@import '../partials/_header';
+@import '../partials/_nav';
+@import '../partials/_footer';
 
 /*home.scss*/
 html, body {
@@ -11,7 +14,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+/*Page layout*/
 .page-layout-header {
   flex: 0 0 auto;
   width: 100%;
@@ -20,6 +23,11 @@ body {
 .page-layout-main {
   flex: 1 1 auto;
   width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .page-layout-footer {
@@ -27,4 +35,20 @@ body {
   width: 100%;
 }
 
-@import '../partials/_header';
+
+/*Page Components*/
+.page-heading {
+  margin-top: 1em;
+  font-size: 4em;
+  color: $site-tertiary-color;
+}
+
+.page-description {
+  margin-top: 3em;
+  font-size: 1.5em;
+  font-weight: 500;
+  color: $site-tertiary-color;
+  text-align: justify;
+  margin-left: $site-text-side-margin;
+  margin-right: $site-text-side-margin;
+}

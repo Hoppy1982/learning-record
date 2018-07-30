@@ -1,11 +1,14 @@
 /*_header.scss*/
-$header-primary-color: dimgrey;
 
 .header {
   background: $site-primary-color;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1rem;
 }
 
 .header__heading {
   text-align: center;
-  color: $header-primary-color;
+  color: $site-secondary-color;
+  font-size: 2em;
 }

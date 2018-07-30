@@ -1,0 +1,15 @@
+/*_footer.scss*/
+
+.footer {
+  background-color: $site-primary-color;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__github-link {
+  font-size: 2em;
+  color: $site-secondary-color;
+}
