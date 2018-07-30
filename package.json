@@ -1,5 +1,6 @@
 {
   "name": "learning-record",
+  "homepage": "https://hoppy1982.github.io/learning-record",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +10,9 @@
     "scss:watch": "npm run scss && node-sass client/src/pages -wo client/build",
     "ejs": "node scripts/build-ejs.js",
     "favicon": "node scripts/copy-favicon.js",
-    "build": "npm run scss && npm run ejs && npm run favicon"
+    "build": "npm run scss && npm run ejs && npm run favicon",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +21,7 @@
     "express": "^4.16.3"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.0",
+    "gh-pages": "^1.2.0"
   }
 }
