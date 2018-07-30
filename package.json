@@ -11,8 +11,7 @@
     "ejs": "node scripts/build-ejs.js",
     "favicon": "node scripts/copy-favicon.js",
     "build": "npm run scss && npm run ejs && npm run favicon",
-    "xpredeploy": "npm run build",
-    "xdeploy": "gh-pages -d /client/build /",
+    "predeploy": "npm run build",
     "deploy": "node scripts/deploy.js"
   },
   "author": "",
