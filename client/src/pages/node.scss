@@ -1,0 +1,19 @@
+@import '../partials/_defaults';
+@import '../partials/_header';
+@import '../partials/_nav';
+@import '../partials/_footer';
+
+
+/*Page Components*/
+.page-heading {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 4em;
+  color: $site-tertiary-color;
+}
+
+
+
+/*media queries*/
+@media only screen and (min-width: 480px) {
+}
