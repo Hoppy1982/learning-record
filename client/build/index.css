@@ -8,11 +8,10 @@
 html {
   font-family: "system-ui";
   font-size: 16px;
-  min-height: 100%;
 }
 
 body {
-  min-height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -104,38 +103,6 @@ body {
 .footer__github-link {
   font-size: 2em;
   color: #fff;
-}
-
-/*home.scss*/
-html, body {
-  height: 100%;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/*Page layout*/
-.page-layout-header {
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.page-layout-main {
-  flex: 1 1 auto;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.page-layout-footer {
-  flex: 0 0 auto;
-  width: 100%;
 }
 
 /*Page Components*/

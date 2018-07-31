@@ -16,14 +16,41 @@
   <main class='page-layout-main'>
     <h2 class='page-heading'>Git</h2>
 
-    <section class='git-commands'>
+    <section class='git-commands-section'>
       <h3 class='section-heading'>Git Commands</h3>
-      <p class='section-desc'>This is a record of the git commands I've used with examples of how I've used them.</p>
+      <p class='section-desc'>
+        This is a record of the git commands I've used with examples of how I've used them.
+        The plan is to at least dump placeholders on this page which I can return to and
+        read up on / flesh out later on. I wanted to start doing this as git seems such a broad
+        topic but you can do some cool stuff without having to know each and every command inside out.
+      </p>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>status</h4>
         <p class='git-command-container__desc'>To see what is / isn't staged for commit on current branch.</p>
         <code class='git-command-container__example-code'>$ git status</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>checkout</h4>
+        <p class='git-command-container__desc'>Switches between branches / commits.</p>
+        <code class='git-command-container__example-code'>$ git checkout branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>diff</h4>
+        <p class='git-command-container__desc'>To see the differences between two branches.</p>
+        <code class='git-command-container__example-code'>$ git diff branchOne branchTwo</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>log</h4>
+        <p class='git-command-container__desc'>To view commit history. 'q' to exit from the log abck into bash.</p>
+        <p class='git-command-container__desc'>'q' to exit from the log abck into bash.</p>
+        <p class='git-command-container__desc'>Use this to get commit names if you need to checkout or revert them.</p>
+        <code class='git-command-container__example-code'>$ git log</code>
+        <p class='git-command-container__desc'>Short pretty format</p>
+        <code class='git-command-container__example-code'>$ git log --pretty=short</code>
       </div>
 
       <div class='git-command-container'>
@@ -45,6 +72,8 @@
         <p class='git-command-container__desc'>Creates a commit on current branch.</p>
         <p class='git-command-container__desc'>If the -m flag is not used default text editor will open.</p>
         <code class='git-command-container__example-code'>$ git commit -m "this is a commit message"</code>
+        <p class='git-command-container__desc'>Edit to message of the most recent commit.</p>
+        <code class='git-command-container__example-code'>$ git commit --ammend -m "edited commit message"</code>
       </div>
 
       <div class='git-command-container'>
@@ -100,6 +129,24 @@
         <h4 class='git-command-container__heading'>clone</h4>
         <p class='git-command-container__desc'>#placeholder</p>
         <code class='git-command-container__example-code'>$ git clone</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>reset</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git reset</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>rebase</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git rebase</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>revert</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git revert</code>
       </div>
 
     </section>
