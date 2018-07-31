@@ -35,11 +35,91 @@
     <h2 class='page-heading'>Git</h2>
 
     <section class='git-commands'>
-      <h3 class='git-commands__heading'></h3>
+      <h3 class='section-heading'>Git Commands</h3>
+      <p class='section-desc'>This is a record of the git commands I've used with examples of how I've used them.</p>
 
-      <div class='git-commands__command'>
-        <code>git add</code>
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>status</h4>
+        <p class='git-command-container__desc'>To see what is / isn't staged for commit on current branch.</p>
+        <code class='git-command-container__example-code'>$ git status</code>
       </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>remote</h4>
+        <p class='git-command-container__desc'>To see the remote url</p>
+        <code class='git-command-container__example-code'>$ git remote -v</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>add</h4>
+        <p class='git-command-container__desc'>To add all modified files to staging area</p>
+        <code class='git-command-container__example-code'>$ git add .</code>
+        <p class='git-command-container__desc'>To add an individual file to staging area</p>
+        <code class='git-command-container__example-code'>$ git add /examplePath/exampleFile.js</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>commit</h4>
+        <p class='git-command-container__desc'>Creates a commit on current branch.</p>
+        <p class='git-command-container__desc'>If the -m flag is not used default text editor will open.</p>
+        <code class='git-command-container__example-code'>$ git commit -m "this is a commit message"</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>branch</h4>
+        <p class='git-command-container__desc'>To view all branches and current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch</code>
+        <p class='git-command-container__desc'>To create a new branch from the current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch newBranchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>set-upstream</h4>
+        <p class='git-command-container__desc'>To set the remote for current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch --set-upstream-to=origin/branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>push</h4>
+        <p class='git-command-container__desc'>To push current branch up to the set remote.</p>
+        <code class='git-command-container__example-code'>$ git push</code>
+        <p class='git-command-container__desc'>To set the remote and push to it.</p>
+        <code class='git-command-container__example-code'>$ git push -u origin branchName</code>
+        <p class='git-command-container__desc'>
+          To force push to the set remote. I've done this when the remote is has changes that
+          would be lost but I don't care and want to overwrite the remote from local. Maybe After changing
+          the directory structure. Git warns you that you could lose code. Use like below it can push to multiple
+          branches I think and is dangerous as can lose commits.
+        </p>
+        <code class='git-command-container__example-code'>$ git push -f</code>
+        <p class='git-command-container__desc'>Force pushes to specified branch only.</p>
+        <code class='git-command-container__example-code'>$ git push origin +branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>fetch</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git fetch</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>merge</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git merge</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>pull</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git pull</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>clone</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git clone</code>
+      </div>
+
     </section>
 
   </main>
