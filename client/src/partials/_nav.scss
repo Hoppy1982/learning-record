@@ -8,7 +8,7 @@
 .site-main-nav__links-list {
   list-style: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   background-color: $site-primary-color;
 }
@@ -45,12 +45,31 @@
 
 .site-main-nav__page-mkr {
   width: 10px;
-  height: 10px;
+  height: 2em;
   background-color: $site-tertiary-color;
-  margin-right: 10px;
   visibility: hidden;
 }
 
 .site-main-nav__page-mkr--current {
   visibility: visible;
+}
+
+
+/*_nav.scss media queries*/
+
+@media only screen and (min-width: 480px) {
+  .site-main-nav__links-list {
+    flex-direction: row;
+  }
+
+  .site-main-nav__link-item {
+    flex-direction: column;
+    height: 3em;
+  }
+
+  .site-main-nav__page-mkr {
+    width: 3em;
+    height: 10px;
+    margin-bottom: 4px;
+  }
 }
