@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class='no-js' lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Learning record - git</title>
+<meta name="description" content="Learning record">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" href="favicon.ico" type='image/x-icon'>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src='../src/partials/_nav.js'></script>
+
+  <link rel='stylesheet' type='text/css' href='git.css'>
+</head>
+
+<body>
+  <div class=page-layout-header>
+    <header class='header'>
+  <h1 class='header__heading'>Learning Record</h1>
+  <div class='header__filter'></div>
+  <div class='header__bg-img'></div>
+</header>
+
+    <nav class='site-main-nav'>
+  <ul class='site-main-nav__links-list'>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr site-main-nav__page-mkr--current'></div>
+      <a class='site-main-nav__link' href='index.html'>Home</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='git.html'>Git</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='#'>npm</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='node.html'>Node</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='#'>JS</a>
+    </li>
+
+  </ul>
+</nav>
+
+  </div>
+
+
+  <main class='page-layout-main'>
+    <h2 class='page-heading'>Git</h2>
+
+    <section class='git-commands-section'>
+      <h3 class='section-heading'>Git Commands</h3>
+      <p class='section-desc'>
+        This is a record of the git commands I've used with examples of how I've used them.
+        The plan is to at least dump placeholders on this page which I can return to and
+        read up on / flesh out later on. I wanted to start doing this as git seems such a broad
+        topic but you can do some cool stuff without having to know each and every command inside out.
+      </p>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>status</h4>
+        <p class='git-command-container__desc'>To see what is / isn't staged for commit on current branch.</p>
+        <code class='git-command-container__example-code'>$ git status</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>checkout</h4>
+        <p class='git-command-container__desc'>Switches between branches / commits.</p>
+        <code class='git-command-container__example-code'>$ git checkout branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>diff</h4>
+        <p class='git-command-container__desc'>To see the differences between two branches.</p>
+        <code class='git-command-container__example-code'>$ git diff branchOne branchTwo</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>log</h4>
+        <p class='git-command-container__desc'>To view commit history. 'q' to exit from the log abck into bash.</p>
+        <p class='git-command-container__desc'>'q' to exit from the log abck into bash.</p>
+        <p class='git-command-container__desc'>Use this to get commit names if you need to checkout or revert them.</p>
+        <code class='git-command-container__example-code'>$ git log</code>
+        <p class='git-command-container__desc'>Short pretty format</p>
+        <code class='git-command-container__example-code'>$ git log --pretty=short</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>remote</h4>
+        <p class='git-command-container__desc'>To see the remote url</p>
+        <code class='git-command-container__example-code'>$ git remote -v</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>add</h4>
+        <p class='git-command-container__desc'>To add all modified files to staging area</p>
+        <code class='git-command-container__example-code'>$ git add .</code>
+        <p class='git-command-container__desc'>To add an individual file to staging area</p>
+        <code class='git-command-container__example-code'>$ git add /examplePath/exampleFile.js</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>commit</h4>
+        <p class='git-command-container__desc'>Creates a commit on current branch.</p>
+        <p class='git-command-container__desc'>If the -m flag is not used default text editor will open.</p>
+        <code class='git-command-container__example-code'>$ git commit -m "this is a commit message"</code>
+        <p class='git-command-container__desc'>Edit to message of the most recent commit.</p>
+        <code class='git-command-container__example-code'>$ git commit --ammend -m "edited commit message"</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>branch</h4>
+        <p class='git-command-container__desc'>To view all branches and current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch</code>
+        <p class='git-command-container__desc'>To create a new branch from the current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch newBranchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>set-upstream</h4>
+        <p class='git-command-container__desc'>To set the remote for current branch.</p>
+        <code class='git-command-container__example-code'>$ git branch --set-upstream-to=origin/branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>push</h4>
+        <p class='git-command-container__desc'>To push current branch up to the set remote.</p>
+        <code class='git-command-container__example-code'>$ git push</code>
+        <p class='git-command-container__desc'>To set the remote and push to it.</p>
+        <code class='git-command-container__example-code'>$ git push -u origin branchName</code>
+        <p class='git-command-container__desc'>
+          To force push to the set remote. I've done this when the remote is has changes that
+          would be lost but I don't care and want to overwrite the remote from local. Maybe After changing
+          the directory structure. Git warns you that you could lose code. Use like below it can push to multiple
+          branches I think and is dangerous as can lose commits.
+        </p>
+        <code class='git-command-container__example-code'>$ git push -f</code>
+        <p class='git-command-container__desc'>Force pushes to specified branch only.</p>
+        <code class='git-command-container__example-code'>$ git push origin +branchName</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>fetch</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git fetch</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>merge</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git merge</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>pull</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git pull</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>clone</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git clone</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>reset</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git reset</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>rebase</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git rebase</code>
+      </div>
+
+      <div class='git-command-container'>
+        <h4 class='git-command-container__heading'>revert</h4>
+        <p class='git-command-container__desc'>#placeholder</p>
+        <code class='git-command-container__example-code'>$ git revert</code>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <div class='page-layout-footer'>
+    <footer class='footer'>
+  <a class='footer__github-link' href='https://github.com/Hoppy1982/learning-record'><i class="fab fa-github-square"></i></a>
+</footer>
+
+  </div>
+</body>
+
+</html>

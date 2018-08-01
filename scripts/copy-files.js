@@ -14,7 +14,7 @@ const toCopy = [
     name: 'images',
     src: path.join(__dirname, '/../client/src/static/images'),
     dest: path.join(__dirname, '/../client/build/static/images'),
-    ext: 'jpg'
+    ext: '.jpg'
   }
 ]
 
@@ -36,14 +36,14 @@ toCopy.forEach(copyDetailsObj => {
 function filterFiles(filenames, ext) {
   return filenames.filter(filename => {
     if (ext === '*') {return true}
-    if (filename.split('.').pop() === ext) {return true}
+    if (path.extname(filename) === ext) {return true}
   })
 }
 
 
 function copyFiles(filenames, src, dest) {
   filenames.forEach(filename => {
-    fs.copyFile(`${src}/${filename}`, `${dest}/${filename}`, (err) => {
+    fs.copyFile(path.join(src, filename), path.join(dest, filename), (err) => {
       console.log(src)
       console.log(dest)
       console.log(filename)
