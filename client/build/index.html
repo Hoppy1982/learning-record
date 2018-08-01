@@ -10,6 +10,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="icon" href="favicon.ico" type='image/x-icon'>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+<script src='../src/partials/_nav.js'></script>
 
   <link rel='stylesheet' type='text/css' href='index.css'>
 </head>
@@ -18,15 +19,38 @@
   <div class=page-layout-header>
     <header class='header'>
   <h1 class='header__heading'>Learning Record</h1>
+  <div class='header__filter'></div>
+  <div class='header__bg-img'></div>
 </header>
 
     <nav class='site-main-nav'>
   <ul class='site-main-nav__links-list'>
-    <li class='site-main-nav__link-item'><a class='site-main-nav__link' href='index.html'>Home</a></li>
-    <li class='site-main-nav__link-item'><a class='site-main-nav__link' href='git.html'>Git</a></li>
-    <li class='site-main-nav__link-item'><a class='site-main-nav__link' href='#'>npm</a></li>
-    <li class='site-main-nav__link-item'><a class='site-main-nav__link' href='node.html'>Node</a></li>
-    <li class='site-main-nav__link-item'><a class='site-main-nav__link' href='#'>Javascript</a></li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr site-main-nav__page-mkr--current'></div>
+      <a class='site-main-nav__link' href='index.html'>Home</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='git.html'>Git</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='#'>npm</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='node.html'>Node</a>
+    </li>
+
+    <li class='site-main-nav__link-item'>
+      <div class='site-main-nav__page-mkr'></div>
+      <a class='site-main-nav__link' href='#'>JS</a>
+    </li>
+
   </ul>
 </nav>
 
