@@ -14,7 +14,7 @@ $header-height: 140px;
 
 .header__heading {
   color: $site-secondary-color;
-  font-size: 3em;
+  font-size: 2em;
   width: 100%;
   height: $header-height;
   position: absolute;
@@ -60,4 +60,12 @@ $header-height: 140px;
   60% {background-position: 100% 0%;}
   80% {background-position: 100% 100%;}
   100% {background-position: 50% 50%;}
+}
+
+
+/*_header.scss media queries*/
+@media only screen and (min-width: 480px) {
+  .header__heading {
+    font-size: 3em;
+  }
 }

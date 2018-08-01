@@ -50,7 +50,7 @@ body {
 
 .header__heading {
   color: #fff;
-  font-size: 3em;
+  font-size: 2em;
   width: 100%;
   height: 140px;
   position: absolute;
@@ -101,6 +101,11 @@ body {
   100% {
     background-position: 50% 50%; } }
 
+/*_header.scss media queries*/
+@media only screen and (min-width: 480px) {
+  .header__heading {
+    font-size: 3em; } }
+
 /*_site-main-nav.scss*/
 .site-main-nav {
   width: 100%; }
@@ -117,9 +122,15 @@ body {
   border: solid #08010B 4px;
   width: 6em;
   height: 2em;
-  display: flex;
   flex-direction: row;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
+
+.site-main-nav__link-item--display {
+  display: flex; }
+
+.site-main-nav__link-item--dontDisplay {
+  display: none; }
 
 .site-main-nav__link {
   font-weight: 700;
@@ -128,12 +139,25 @@ body {
   background-color: #08010B;
   width: 100%;
   height: 100%;
+  padding-left: 1em;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   text-decoration: none;
   transition: color 4s;
   transition: background-color 4s; }
+
+.site-main-nav__menu-button-list-element {
+  width: 100%;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.site-main-nav__menu-button-icon {
+  color: #fff;
+  background-color: #08010B;
+  font-size: 1.5em; }
 
 .site-main-nav__link:hover {
   color: #08010B;
@@ -142,6 +166,7 @@ body {
 .site-main-nav__page-mkr {
   width: 10px;
   height: 2em;
+  margin-right: 5px;
   background-color: #1366C7;
   visibility: hidden; }
 
@@ -150,15 +175,22 @@ body {
 
 /*_nav.scss media queries*/
 @media only screen and (min-width: 480px) {
+  .site-main-nav__link {
+    align-items: center;
+    padding-left: 0px; }
   .site-main-nav__links-list {
     flex-direction: row; }
   .site-main-nav__link-item {
+    display: flex;
     flex-direction: column;
     height: 3em; }
   .site-main-nav__page-mkr {
     width: 3em;
     height: 10px;
-    margin-bottom: 4px; } }
+    margin-bottom: 4px;
+    margin-right: 0px; }
+  .site-main-nav__menu-button-list-element {
+    display: none; } }
 
 /*_footer.scss*/
 .footer {
@@ -186,7 +218,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E0F7FB; }
+  background-color: #A1A5AF; }
 
 .section-heading {
   margin-left: 2em;
