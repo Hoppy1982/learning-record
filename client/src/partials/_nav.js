@@ -49,3 +49,6 @@ function navMenuButtonOnClick() {
   }
 
 }
+
+
+console.log('can i see this????')
