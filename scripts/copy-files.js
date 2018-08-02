@@ -1,6 +1,10 @@
 const path = require('path')
 const fs = require('fs')
+//fs can only make one subdir at a time, shelljs can make nested dirs
 const shelljs = require('shelljs')
+const util = require('util')
+
+const readDir = util.promisify(fs.readdir)
 
 
 const toCopy = [
@@ -20,6 +24,24 @@ const toCopy = [
 
 
 toCopy.forEach(copyDetailsObj => {
+  shelljs.mkdir('-p', copyDetailsObj.dest)
+
+  readDir(copyDetailsObj.src)
+  .then(filenames => {
+    return filterFiles(filenames, copyDetailsObj.ext)
+  })
+  .then(filteredFiles => {
+    copyFiles(filteredFiles, copyDetailsObj.src, copyDetailsObj.dest)
+  })
+  .catch(err => {
+    throw new Error('readDir failed...')
+  })
+
+})
+
+
+/*
+toCopy.forEach(copyDetailsObj => {
   let filteredFiles
 
   fs.readdir(copyDetailsObj.src, (err, filenames) => {
@@ -30,7 +52,7 @@ toCopy.forEach(copyDetailsObj => {
     copyFiles(filteredFiles, copyDetailsObj.src, copyDetailsObj.dest)
   })
 
-})
+})*/
 
 
 function filterFiles(filenames, ext) {
@@ -44,9 +66,7 @@ function filterFiles(filenames, ext) {
 function copyFiles(filenames, src, dest) {
   filenames.forEach(filename => {
     fs.copyFile(path.join(src, filename), path.join(dest, filename), (err) => {
-      console.log(src)
-      console.log(dest)
-      console.log(filename)
+
       if (err) {
         throw new Error(`Error copying ${filename}`)
       }
