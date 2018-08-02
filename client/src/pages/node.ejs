@@ -141,66 +141,133 @@
         <div class='node-script-container__code'>
           <pre>
             <code>
-const path = require('path')
-const fs = require('fs')
-const shelljs = require('shelljs')
+ const path = require('path')
+ const fs = require('fs')
+ const shelljs = require('shelljs')
 
 
-const toCopy = [
-  {
-    name: 'favicon stuffs',
-    src: path.join(__dirname, '/../client/src/static/toRoot'),
-    dest: path.join(__dirname, '/../client/build'),
-    ext: '*'
-  },
-  {
-    name: 'images',
-    src: path.join(__dirname, '/../client/src/static/images'),
-    dest: path.join(__dirname, '/../client/build/static/images'),
-    ext: 'jpg'
-  }
-]
+ const toCopy = [
+   {
+     name: 'favicon stuffs',
+     src: path.join(__dirname, '/../client/src/static/toRoot'),
+     dest: path.join(__dirname, '/../client/build'),
+     ext: '*'
+   },
+   {
+     name: 'images',
+     src: path.join(__dirname, '/../client/src/static/images'),
+     dest: path.join(__dirname, '/../client/build/static/images'),
+     ext: 'jpg'
+   }
+ ]
 
 
-toCopy.forEach(copyDetailsObj => {
-  let filteredFiles
+ toCopy.forEach(copyDetailsObj => {
+   let filteredFiles
 
-  fs.readdir(copyDetailsObj.src, (err, filenames) => {
-    if (err) { throw new Error(`Error reading filenames at ${copyDetailsObj.src}`) }
+   fs.readdir(copyDetailsObj.src, (err, filenames) => {
+     if (err) { throw new Error(`Error reading filenames at ${copyDetailsObj.src}`) }
 
-    shelljs.mkdir('-p', copyDetailsObj.dest)//fs can only make one subdir at a time
-    filteredFiles = filterFiles(filenames, copyDetailsObj.ext)
-    copyFiles(filteredFiles, copyDetailsObj.src, copyDetailsObj.dest)
-  })
+     shelljs.mkdir('-p', copyDetailsObj.dest)//fs can only make one subdir at a time
+     filteredFiles = filterFiles(filenames, copyDetailsObj.ext)
+     copyFiles(filteredFiles, copyDetailsObj.src, copyDetailsObj.dest)
+   })
 
-})
-
-
-function filterFiles(filenames, ext) {
-  return filenames.filter(filename => {
-    if (ext === '*') {return true}
-    if (filename.split('.').pop() === ext) {return true}
-  })
-}
+ })
 
 
-function copyFiles(filenames, src, dest) {
-  filenames.forEach(filename => {
-    fs.copyFile(`${src}/${filename}`, `${dest}/${filename}`, (err) => {
-      console.log(src)
-      console.log(dest)
-      console.log(filename)
-      if (err) {
-        throw new Error(`Error copying ${filename}`)
-      }
+ function filterFiles(filenames, ext) {
+   return filenames.filter(filename => {
+     if (ext === '*') {return true}
+     if (filename.split('.').pop() === ext) {return true}
+   })
+ }
 
-      console.log(`${filename} copied to ${dest}`)
-    })
-  })
-}
+
+ function copyFiles(filenames, src, dest) {
+   filenames.forEach(filename => {
+     fs.copyFile(`${src}/${filename}`, `${dest}/${filename}`, (err) => {
+       console.log(src)
+       console.log(dest)
+       console.log(filename)
+       if (err) {
+         throw new Error(`Error copying ${filename}`)
+       }
+
+       console.log(`${filename} copied to ${dest}`)
+     })
+   })
+ }
             </code>
           </pre>
         </div>
+      </div>
+
+      <div class='node-script-container'>
+      <h4 class='node-script-container__heading'>copy-files.js(with async / await)</h4>
+      <p class='node-script-container__desc'>
+        I got a lot help from Mark Everitt writing this, I'd not used async await or the
+        promisify method that comes with the util module. Like everything else there are
+        loads of existing packages to do this kind of thing. Doing it from scratch took me a whole
+        morning but I learnt so much. I approved my understanding of how to work with promises,
+        had a first go at writing an async function and discovered a better module (mkdirp) to use
+        in place of shelljs.
+      </p>
+      <div class='node-script-container__code'>
+        <pre>
+          <code>
+ const path = require('path')
+ const fs = require('fs')
+ const util = require('util')
+ const mkdirp = util.promisify(require('mkdirp'))
+
+ const readDir = util.promisify(fs.readdir)
+ const copyFile = util.promisify(fs.copyFile)
+
+
+ const toCopy = [
+   {
+     name: 'favicon stuffs',
+     src: path.join(__dirname, '/../client/src/static/toRoot'),
+     dest: path.join(__dirname, '/../client/build'),
+     ext: '*'
+   },
+   {
+     name: 'images',
+     src: path.join(__dirname, '/../client/src/static/images'),
+     dest: path.join(__dirname, '/../client/build/static/images'),
+     ext: '.jpg'
+   }
+ ]
+
+
+ const copyPromises = toCopy.map(async ({src, dest, ext}) => {
+     await mkdirp(dest)
+
+     const unfilteredFiles = await readDir(src)
+     const filteredFiles = filterFiles(unfilteredFiles, ext)
+
+     await Promise.all(filteredFiles.map(file => {
+       return copyFile(path.join(src, file), path.join(dest, file))
+     }))
+   }
+
+ )
+
+ Promise.all(copyPromises)
+   .then(console.log("All files successfully copied.."))
+   .catch(err => "Files failed to copy..")
+
+
+ function filterFiles(filenames, ext) {
+   return filenames.filter(filename => {
+     if (ext === '*') {return true}
+     if (path.extname(filename) === ext) {return true}
+   })
+ }
+          </code>
+        </pre>
+      </div>
       </div>
 
     </section>
