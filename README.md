@@ -1,4 +1,4 @@
-# static-site-boilerplate
+# Coding Reference
 
 ## Build Steps
 * scss to css
@@ -6,7 +6,10 @@
 * lint
 * test
 * browserify js
-* browsersync
+* browsersync?
 
-## Do This
-* use sass variables and separate sass file per component
+## To Do
+* Finish menu button on nav
+* Write a proper readme.md
+* Invert page headings and bg colors?
+* Pull out just the fontawesome icons used

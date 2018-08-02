@@ -7,15 +7,16 @@
 /*Page Components*/
 .page-heading {
   margin-top: 1em;
-  font-size: 4em;
-  color: $site-tertiary-color;
+  font-size: 2.5em;
+  color: $site-primary-color;
 }
 
 .page-description {
-  margin-top: 3em;
-  font-size: 1.5em;
+  margin-top: 1em;
+  font-size: 1.2em;
+  text-align: justify;
   font-weight: 500;
-  color: $site-tertiary-color;
+  color: $site-primary-color;
   text-align: justify;
   margin-left: $site-text-side-margin;
   margin-right: $site-text-side-margin;

@@ -1,14 +1,71 @@
 /*_header.scss*/
 
+$header-height: 140px;
+
 .header {
-  background: $site-primary-color;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding-top: 3em;
+  padding-bottom: 3em;
   font-size: 1rem;
+
+  width: 100%;
+  height: $header-height;
+  overflow: hidden;
 }
 
 .header__heading {
-  text-align: center;
   color: $site-secondary-color;
   font-size: 2em;
+  width: 100%;
+  height: $header-height;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__filter {
+  width: 100%;
+  height: $header-height;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header__bg-img {
+  width: 100%;
+  height: $header-height;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  background-image: url('./static/images/brain1.jpg');
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  animation-name: animate-header-bg;
+  animation-duration: 32s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+}
+@keyframes animate-header-bg {
+  0% {background-position: 50% 50%;}
+  20% {background-position: 0% 0%;}
+  40% {background-position: 0% 100%;}
+  60% {background-position: 100% 0%;}
+  80% {background-position: 100% 100%;}
+  100% {background-position: 50% 50%;}
+}
+
+
+/*_header.scss media queries*/
+@media only screen and (min-width: 480px) {
+  .header__heading {
+    font-size: 3em;
+  }
 }

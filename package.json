@@ -10,9 +10,9 @@
     "scss:watch": "npm run scss && node-sass client/src/pages -wo client/build",
     "autoprefixer": "postcss -u autoprefixer -r client/build/*.css",
     "ejs": "node scripts/build-ejs.js",
-    "favicon-transfer": "node scripts/copy-favicon.js",
+    "copy-files": "node scripts/copy-files.js",
     "build": "npm run ejs && npm run scss",
-    "build-full": "npm run favicon-transfer && npm run ejs && npm run scss && npm run autoprefixer",
+    "build-full": "npm run copy-files && npm run ejs && npm run scss && npm run autoprefixer",
     "deploy": "node scripts/deploy.js"
   },
   "author": "",
@@ -22,8 +22,16 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.0.2",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
     "gh-pages": "^1.2.0",
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.9.2",
-    "postcss-cli": "^6.0.0"
+    "postcss-cli": "^6.0.0",
+    "shelljs": "^0.8.2"
   }
 }
