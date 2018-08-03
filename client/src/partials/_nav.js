@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 function redirectRootToHome() {
-  console.log(window.location.pathname)
   let url = window.location.pathname
   let page = url.split('/').pop()
+  console.log(url)
   console.log(page)
   if (page === '/' || page === '/learning-record/') {
     console.log('REDIRECT REQUIRED..')
