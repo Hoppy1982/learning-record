@@ -1,12 +1,23 @@
 document.addEventListener('DOMContentLoaded', function(event) {
+  redirectRootToHome()
   markCurrentPageInNav()
   addEventListeners()
 })
 
 
+function redirectRootToHome() {
+  console.log(window.location.pathname)
+  let url = window.location.pathname
+  let page = url.split('/').pop()
+  console.log(page)
+  if (page === '/' || page === 'learning-record/') {
+    console.log('REDIRECT REQUIRED..')
+  }
+}
+
+
 function addEventListeners() {
-  let navMenuButton = document.getElementById('site-main-nav__menu-button-clickable')
-  navMenuButton.addEventListener('click', function(event) {
+  document.getElementById('site-main-nav__menu-button-clickable').addEventListener('click', function(event) {
     navMenuButtonOnClick()
   })
 }
@@ -49,6 +60,3 @@ function navMenuButtonOnClick() {
   }
 
 }
-
-
-console.log('can i see this????')
