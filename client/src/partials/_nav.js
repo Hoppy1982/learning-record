@@ -10,7 +10,7 @@ function redirectRootToHome() {
   let url = window.location.pathname
   let page = url.split('/').pop()
   console.log(page)
-  if (page === '/' || page === 'learning-record/') {
+  if (page === '/' || page === '/learning-record/') {
     console.log('REDIRECT REQUIRED..')
   }
 }
