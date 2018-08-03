@@ -12,6 +12,8 @@ function redirectRootToHome() {
   console.log(page)
   if (page === '/' || page === '/learning-record/') {
     console.log('REDIRECT REQUIRED..')
+  } else {
+    console.log('NO REDIRECT REQuIRED..')
   }
 }
 
