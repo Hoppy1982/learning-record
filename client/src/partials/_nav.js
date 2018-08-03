@@ -8,12 +8,9 @@ document.addEventListener('DOMContentLoaded', function(event) {
 function redirectRootToHome() {
   let url = window.location.pathname
   let page = url.split('/').pop()
-  console.log(url)
-  console.log(page)
-  if (page === '/' || page === '/learning-record/') {
-    console.log('REDIRECT REQUIRED..')
-  } else {
-    console.log('NO REDIRECT REQuIRED..')
+
+  if (page === '/' || page === '/learning-record/' || url === '/learning-record/' || url === '') {
+    window.location.replace('https://hoppy1982.github.io/learning-record/index.html')
   }
 }
 

@@ -10,9 +10,10 @@
     "scss:watch": "npm run scss && node-sass client/src/pages -wo client/build",
     "autoprefixer": "postcss -u autoprefixer -r client/build/*.css",
     "ejs": "node scripts/build-ejs.js",
+    "browserify": "node scripts/browserify.js",
     "copy-files": "node scripts/copy-files.js",
-    "build": "npm run ejs && npm run scss",
-    "build-full": "npm run copy-files && npm run ejs && npm run scss && npm run autoprefixer",
+    "build": "npm run ejs && npm run scss && npm run browserify",
+    "build-full": "npm run build && npm run copy-files && npm run autoprefixer",
     "deploy": "node scripts/deploy.js"
   },
   "author": "",
