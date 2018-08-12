@@ -24,14 +24,18 @@
 .section-heading {
   margin-left: 2em;
   margin-top: 1em;
-  align-self: flex-start;
 }
 
 .section-desc {
   margin-left: 2em;
   margin-right: 2em;
   margin-top: 1em;
-  align-self: flex-start;
+  margin-bottom: 1em;
+  align-self: center;
+  max-width: 700px;
+  font-size: 1.2em;
+  font-weight: 500;
+  text-align: center;
 }
 
 .git-command-container {
