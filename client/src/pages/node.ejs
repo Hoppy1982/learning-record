@@ -4,7 +4,7 @@
 <head>
   <%- include('../partials/_head.ejs') %>
   <link rel='stylesheet' type='text/css' href='node.css'>
-  <script src='bundled-node.js'></script>
+  <link href="static/themes/prism.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -43,7 +43,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const ejs = require('ejs')
@@ -110,7 +110,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const ghpages = require('gh-pages')
 
  const dir = 'client/build'
@@ -144,7 +144,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const shelljs = require('shelljs')
@@ -219,7 +219,7 @@
       </p>
       <div class='node-script-container__code'>
         <pre>
-          <code>
+          <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const util = require('util')
@@ -282,6 +282,9 @@
   <div class='page-layout-footer'>
     <%- include('../partials/_footer.ejs') %>
   </div>
+
+  <script src='bundled-node.js'></script>
+  <script src='static/scripts/prism.js'></script>
 </body>
 
 </html>

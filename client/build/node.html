@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
   <link rel='stylesheet' type='text/css' href='node.css'>
-  <script src='bundled-node.js'></script>
+  <link href="static/themes/prism.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -90,7 +90,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const ejs = require('ejs')
@@ -157,7 +157,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const ghpages = require('gh-pages')
 
  const dir = 'client/build'
@@ -191,7 +191,7 @@
         </p>
         <div class='node-script-container__code'>
           <pre>
-            <code>
+            <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const shelljs = require('shelljs')
@@ -266,7 +266,7 @@
       </p>
       <div class='node-script-container__code'>
         <pre>
-          <code>
+          <code class="language-js">
  const path = require('path')
  const fs = require('fs')
  const util = require('util')
@@ -332,6 +332,9 @@
 </footer>
 
   </div>
+
+  <script src='bundled-node.js'></script>
+  <script src='static/scripts/prism.js'></script>
 </body>
 
 </html>

@@ -19,6 +19,18 @@ const toCopy = [
     src: path.join(__dirname, '/../client/src/static/images'),
     dest: path.join(__dirname, '/../client/build/static/images'),
     ext: '.jpg'
+  },
+  {
+    name: 'prism-js',
+    src: path.join(__dirname, '/../client/src/static/scripts'),
+    dest: path.join(__dirname, '/../client/build/static/scripts'),
+    ext: '.js'
+  },
+  {
+    name: 'prism-css',
+    src: path.join(__dirname, '/../client/src/static/themes'),
+    dest: path.join(__dirname, '/../client/build/static/themes'),
+    ext: '.css'
   }
 ]
 

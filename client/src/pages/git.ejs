@@ -4,7 +4,7 @@
 <head>
   <%- include('../partials/_head.ejs') %>
   <link rel='stylesheet' type='text/css' href='git.css'>
-  <script src='bundled-git.js'></script>
+  <link href="static/themes/prism.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -32,79 +32,79 @@
           Shows current branch, untracked files in red, tracked files in green.
           Also shows whether the local and remote branches are in sync.
         </p>
-        <code class='git-command-container__example-code'>$ git status</code>
+        <code class='language-js'>$ git status</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>checkout</h4>
         <p class='git-command-container__desc'>Switches between branches / commits.</p>
-        <code class='git-command-container__example-code'>$ git checkout branchName</code>
+        <code class='language-js'>$ git checkout branchName</code>
         <p class='git-command-container__desc'>To create then checkou a branch.</p>
-        <code class='git-command-container__example-code'>$ git checkout -b newBranchName</code>
+        <code class='language-js'>$ git checkout -b newBranchName</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>diff</h4>
         <p class='git-command-container__desc'>To see the differences between two branches / commits.</p>
-        <code class='git-command-container__example-code'>$ git diff branchOne branchTwo</code>
+        <code class='language-js'>$ git diff branchOne branchTwo</code>
         <p class='git-command-container__desc'>Just see which files are different.</p>
-        <code class='git-command-container__example-code'>$ git diff --name-only branchOne branchTwo</code>
+        <code class='language-js'>$ git diff --name-only branchOne branchTwo</code>
         <p class='git-command-container__desc'>View difference between a local branch and remote</p>
-        <code class='git-command-container__example-code'>$ git diff branchOne origin/branchTwo</code>
+        <code class='language-js'>$ git diff branchOne origin/branchTwo</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>log</h4>
         <p class='git-command-container__desc'>To view commit history. 'q' to exit from the log back into bash.</p>
         <p class='git-command-container__desc'>Use this to get commit names if you need to checkout or revert to them.</p>
-        <code class='git-command-container__example-code'>$ git log</code>
+        <code class='language-js'>$ git log</code>
         <p class='git-command-container__desc'>Short pretty format</p>
-        <code class='git-command-container__example-code'>$ git log --pretty=short</code>
+        <code class='language-js'>$ git log --pretty=short</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>remote</h4>
         <p class='git-command-container__desc'>To see the remote url</p>
-        <code class='git-command-container__example-code'>$ git remote -v</code>
+        <code class='language-js'>$ git remote -v</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>add</h4>
         <p class='git-command-container__desc'>To add all modified files to staging area</p>
-        <code class='git-command-container__example-code'>$ git add .</code>
+        <code class='language-js'>$ git add .</code>
         <p class='git-command-container__desc'>To add an individual file to staging area</p>
-        <code class='git-command-container__example-code'>$ git add /examplePath/exampleFile.js</code>
+        <code class='language-js'>$ git add /examplePath/exampleFile.js</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>commit</h4>
         <p class='git-command-container__desc'>Creates a commit on current branch.</p>
         <p class='git-command-container__desc'>If the -m flag is not used default text editor will open.</p>
-        <code class='git-command-container__example-code'>$ git commit -m "this is a commit message"</code>
+        <code class='language-js'>$ git commit -m "this is a commit message"</code>
         <p class='git-command-container__desc'>Edit to message of the most recent commit.</p>
-        <code class='git-command-container__example-code'>$ git commit --ammend -m "edited commit message"</code>
+        <code class='language-js'>$ git commit --ammend -m "edited commit message"</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>branch</h4>
         <p class='git-command-container__desc'>To view all branches and current branch.</p>
-        <code class='git-command-container__example-code'>$ git branch</code>
+        <code class='language-js'>$ git branch</code>
         <p class='git-command-container__desc'>To create a new branch from the current branch.</p>
-        <code class='git-command-container__example-code'>$ git branch newBranchName</code>
+        <code class='language-js'>$ git branch newBranchName</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>set-upstream</h4>
         <p class='git-command-container__desc'>To set the remote for current branch.</p>
-        <code class='git-command-container__example-code'>$ git branch --set-upstream-to=origin/branchName</code>
+        <code class='language-js'>$ git branch --set-upstream-to=origin/branchName</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>push</h4>
         <p class='git-command-container__desc'>To push current branch up to the set remote.</p>
-        <code class='git-command-container__example-code'>$ git push</code>
+        <code class='language-js'>$ git push</code>
         <p class='git-command-container__desc'>To set the remote and push to it.</p>
-        <code class='git-command-container__example-code'>$ git push -u origin branchName</code>
+        <code class='language-js'>$ git push -u origin branchName</code>
         <p class='git-command-container__desc'>
           To force push to the set remote. I've done this when the remote is has changes that
           would be lost but I don't care and want to overwrite the remote from local. Maybe After changing
@@ -112,53 +112,53 @@
           branches I think and is dangerous as can lose commits. Probably avoid force pushing at all unless it's just yourself
           working on a repo. Better to normal push and solve conflicts.
         </p>
-        <code class='git-command-container__example-code'>$ git push -f</code>
+        <code class='language-js'>$ git push -f</code>
         <p class='git-command-container__desc'>Force pushes to specified branch only.</p>
-        <code class='git-command-container__example-code'>$ git push origin +branchName</code>
+        <code class='language-js'>$ git push origin +branchName</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>fetch</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git fetch</code>
+        <code class='language-js'>$ git fetch</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>merge</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git merge</code>
+        <code class='language-js'>$ git merge</code>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git merge --abort</code>
+        <code class='language-js'>$ git merge --abort</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>pull</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git pull</code>
+        <code class='language-js'>$ git pull</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>clone</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git clone</code>
+        <code class='language-js'>$ git clone</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>reset</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git reset</code>
+        <code class='language-js'>$ git reset</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>rebase</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git rebase</code>
+        <code class='language-js'>$ git rebase</code>
       </div>
 
       <div class='git-command-container'>
         <h4 class='git-command-container__heading'>revert</h4>
         <p class='git-command-container__desc'>#placeholder</p>
-        <code class='git-command-container__example-code'>$ git revert</code>
+        <code class='language-js'>$ git revert</code>
       </div>
 
     </section>
@@ -169,6 +169,9 @@
   <div class='page-layout-footer'>
     <%- include('../partials/_footer.ejs') %>
   </div>
+
+  <script src='bundled-git.js'></script>
+  <script src='static/scripts/prism.js'></script>
 </body>
 
 </html>
