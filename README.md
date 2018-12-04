@@ -17,6 +17,9 @@
 * Check and ammend node scripts that use simple loops when dealing with async stuff. Rewrite using async await - as have done in copy-files.js
 * Change repo / project name to coding reference
 * Make code snippet styling better
+* $ git tag -a v1.0 m "this is a tag for v1.0"
+* $ git merge -no-ff
+* $ git commit -a -m "msg" (-a is auto add and rm files)
 
 ## To Polish
 * Menu button on nav
